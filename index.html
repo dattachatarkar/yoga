@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Awareness - Find Your Inner Peace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Mulish:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🧘‍♀️ Yoga Awareness</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link" data-en="Home" data-mr="मुख्यपृष्ठ">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#types" class="nav-link" data-en="Types of Yoga" data-mr="योगाचे प्रकार">Types of Yoga</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#benefits" class="nav-link" data-en="Benefits" data-mr="फायदे">Benefits</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#videos" class="nav-link" data-en="Videos" data-mr="व्हिडिओ">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-en="Contact" data-mr="संपर्क">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button class="language-toggle" id="language-toggle">
+                        <span id="lang-text">मराठी</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="https://pixabay.com/get/gd562e2da85599392f9d73c7d5a5d995a0493365b548ce72c8859e6fb4e180b6eda48a467ca3e8ff6f880fb4b7d9642c0397ff5a1e222d3edd68040c156fb4002_1280.jpg"
+                alt="Peaceful Yoga Background" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title fade-in" data-en="Discover Inner Peace Through Yoga"
+                data-mr="योगाद्वारे अंतर्गत शांती शोधा">
+                Discover Inner Peace Through Yoga
+            </h1>
+            <p class="hero-subtitle fade-in"
+                data-en="Embark on a transformative journey of mindfulness, strength, and spiritual awakening"
+                data-mr="जाणीवपूर्णता, शक्ती आणि आध्यात्मिक जागृतीच्या परिवर्तनकारी प्रवासाला सुरुवात करा">
+                Embark on a transformative journey of mindfulness, strength, and spiritual awakening
+            </p>
+            <button class="cta-button fade-in" data-en="Start Your Journey" data-mr="आपला प्रवास सुरू करा">
+                Start Your Journey
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Types of Yoga Section -->
+    <section id="types" class="types-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Types of Yoga" data-mr="योगाचे प्रकार">Types of Yoga</h2>
+                <p class="section-subtitle"
+                    data-en="Explore different styles and find the perfect practice for your journey"
+                    data-mr="विविध शैली एक्सप्लोर करा आणि आपल्या प्रवासासाठी योग्य सराव शोधा">
+                    Explore different styles and find the perfect practice for your journey
+                </p>
+            </div>
+            <div class="yoga-grid">
+                <div class="yoga-card slide-in-left">
+                    <div class="card-image">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PDw0NDw8ODw0PDw0NDQ0PDw8NDw0NFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4wFx8zODMtNygtLisBCgoKDg0OGxAQGCsdHyA3LS0tLTcrLS0tLSsrKy0tNSstLS0rLS8tLS0uLS8tLS0tLSstLS0tLS0tLy0tListLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAADAAMBAQEAAAAAAAAAAAAAAQIDBQYEBwj/xABAEAACAQIBCAUJBwQCAwEAAAAAAQIDEQQFEhMhMVFhkQZBUnGhFBUiMoGS0eHwByNCYqKxwVNjcoKy8TNzoyT/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBAX/xAAjEQEBAAICAgICAwEAAAAAAAAAAQIRAxIhMUFRBCIyYfAT/9oADAMBAAIRAxEAPwD6rYRYrGmEiLsKxFTYLFWCwVFgsXYVgIsFi7BYgx2FYyWMdacYRcpO0VtYWeQ0S0OjUjOMZxd4yV0yrA9MbQrGRoloCbCsUFgIsKxdhASKxbQrARYVixAQ0KxYmiCLCsXYVgqbCsXYVgJsKxdhWAiwmi7CaCIsBVhBW7AYjbmQWGBFKwWGAIVgsMLBU2FYsAINT0jxGZRUVrc5wilwTTb+t5uGjXZZw+fT/wAXf2HPk31unThsmc2w5Avo5J7VJcrGyaPFkWNqcnvnL2JJJHvHH/GLy3edYwKaEbc02FYoQENAU0JgSIoQEtCsWJoCBFCAQrFCAmwrFgBAWKsJoCQaGAGOwF2ADcAMLGmCEUKxKpAMAEAwCkIoQCMddXjJb0ZTHW9VkvpcfbX5Gfo1FuqPxSPea3Ir9Ksv8H/yNmzHH/GN8s1nSJaKEbYSIpokBCKEBNhFCAQhgBLE0UICRFWEAhDABAMAJE0UAEDHYQG3AVwuaYUIAQqmAAQhBYACkA2IBEVVe3eiyZuyb4EvpZ7afJM1p6sfy35St/Jt2aDJs7YlfmU4+F/4N+zlw3eLrzzWRCGxHVyIllCYEgMQCEMAJaEUJoCQGAEisUIBWEUAEiKsFgJAYgFYBgBshkodzTBhcQxVMBARVCEADYgPJjsoU6EHUm7RVtZLZPayW+I9RNTY+5mvhlineCknFTgp5+2Cb2Rb7tZ7qs1mt3VrbeonaWeGrhljZuOaoyzcTT/9iXN2/k6dnI4ipavTluqRlLglJHXM48F9x2/InqpYhiO7zAQxBUsBsQCEMAEIYASxFMkAEMQAAAAgGJgBLKEwJAYAe8Lk3Fcu00yAQmO4F3AlMdwGArgBgx2IVOEpXSlb0U3Zt7NXM5jF5cw8prD1mr3i6cXsnKLTXiPppiatDMq5qq01KMsxLNlGCabSb2vOinyXE4OrUrrGRxcabq0pLOhK7zVF261sazbc0ebkzt3Hr4cJNWu3xOKV892cn6kd3V7DNPHQhgatNzca7bdvS9dyTjZ7tSX/AGc1kPKFavVqJ0M+0r6SGqKznqSztht5UoVlmWebLVLVrWs4Y243z8vTnJlP1+Gam1VhGedFyW3Wr9zNvgMrwglTrVIRWyEpSS9j+Jy2Po5jcNTUdj3rqZoMVWzXtPdj+PMf2mT5Wf5dy3jlj5fYVJNJppp601rTW8D5p0e6Szw7UHedFv0oX9X80dzPo2FxEKsI1KclKEleMl9bTdmkxylZAADLZCGIAEAAAhiAQWAAJAYgEAwAQmMAEAxASAAB6Ex3IiygKuNMgAMiY7kJjAtMdyLjAjE4eFWLhOKlF9UldGKrk2hOEac6UJQirRUlnWXe9Z6UxjUq7seGeCp0qM40YRpK0rZqt6T1Z3ecv0WwkMNSrwqVLaOrUXpySzad9Vm+p7faddjZ2g2cPlvEwq14UqbznKSc4Qi5ybSSu0taVkjF6XLrfDc/6THvjN69sGVcWpynUXquyh1eilZHI4qblJ7rm7y5WzE0aVepnLW1qfGTs+Vj2XUmo+bN23K/KqUXY7DoLlCpCcqT14eVnJvZTn1Nd/XzOWjGUs2nBXk2o/7dd/HkdTRqUsHh3KrNQpwV6lR/ik+HW3sSPPz8vXxPdev8bhuduV8SO+EfN+jn2nUp1nQxMdFRbUcPXbu4rYlV3d62de8+iwmpJSi1KLScZJpqSexp9Y1flpVwAAAAAikAAAhFCAQmMQCAAABDABCGJgIAACospMxxZSAyXAlMaYFoZCKAoZCZVwKHckLgeHHYqk5eT6SOmcXPRp3lmW1trq2racRWx1LBYuGMq3jRpaSNRxjnPNlFrZ162jyZFxc5ZdxF3qzMYvamrfseT7SpZmDq75SjHnNHLmw68uL08GXbiy3/AG3uI6WdHsY/vpxUn+KdHEUm++UV+7PDlDA5MmnUyfjcIpKOvDTxCaey8ouTvnatj2vcfGooyJM9UkeKzb6Jhct4TDRdRT01Vx9GEE7pvXZv8PG5ymXMsV8XNSrStCLbp0o6oU+PF8X4bDX4arm+i+vY+O4is3ck4sZe3ut3ktx6TxIb39X7nafZ/wBOJ4KUcNXbngpO2+WHbfrR/Lvj7Vr28S5XQJWNViP1HCaklJNOLScZJ3TT2NMo+LdAOnUsJKOFxMnLBvVGTvKWGe9dbhvXVtW5/ZqdSMlGUWpRklKMotNSi9jT60c7NNyrAQEDEABQIYiAEMQCENiAAAGAhDEwEAABEWZEzFBMyKLAoaDNCwFIYkh2AY0xWHZgO47isFgPmfRrDOplzFTXq01i5Sf+VVRS8XyOix/R/DY+tWoYmDnRjFSUYznTaqZ3oyvFrjwNZ0OajjsrvrU4r/61fkdNkBZ08VV3zhTv/im3/wAkOfzyyf706cPjht/3t8+y39kC1zwOJaet6HE613KpFavbF95xWUOh+U8M3pMHXaTtn0o+UQa33p3t7bH6NsGaalcn5ZrwlDVOMoPdOLi/EUasJRtnxzurWtZ+ppU77Un3q5j8mhtzI335qL3TUfl5wlG2cnG+tXTV1wvtKR+nMXhKdWLp1acKkHqcKkIzi13M4rLv2X4SveeGlLCVH+Ffe0W/8W7r2O3AsyLHxVnbdBOnc8C44evnVMG3qW2eHv8Aihvjvjy4+LLvQHKOEzpujpqSu3Vw96iS3yjbOXK3E5WWovtH6fweLp1qcK1KcalKazoTi7pozn566JdLsTk6f3bz6Enerh5t5kvzJ/hlxXtufYsg9NcDjFFRqqlWdvuazUJX3Rl6svY78DNxXbowADKgQ7BYBCGJgJiGFgEA7MVgEDATCkMQEGljja3Zh7r+Jkjja3Zh7svibDyZDWHR595fb0ax+nhWOq9iHJ/EpY2r2IcpHt8nQaBDeX2ax+nlWNq9mHKQ1jKvZhykenQoeiW4by+01j9PN5bV7NPlIfltXs0+UviZ9GtwaNF7ZfZ1x+mFY2p2Yfq+JSx0+zD9RejQaPch2yOuP04fo3P/APTlmo9SU4L2yq1H/B1ORcQ6dGNoJ57lUvdq+c9XhY5jJ+S8Rh6GUJ1kozr4iOYlKMlOMU3tXGbR2cKSilFKyilFLckrG+XLfLbDDHXDJV+cJdiPvP4C84S7EfefwFmicTPbJOsV5wfYj7z+AecH/TXvMx5pLj9XQ7U6RlePl/TXvP4B5e+wvefwMDj38xKPeO9OuL0eXvsL3vkcp0p6JYTH501SWHxL16ek1ab/ALkLWl36nxOj0b48xaN8eY75HTF8Jy50Tx2Dbc6UqlLqrUU6lNrjbXH2rmaSFfq3be8/SDg+PM1eVejuExSar4enNtWz7KNRcVNa1zNzmvyzeKfD5V0e6cY3BtKFV1KK20Krc4W4dcfZ4n1bo703oY6NoJQrJXlQnO0u+Or0l3e0+eZc+zOvBueDmq0NbVKq1TqrgperL25pyWKyfjMHJSrUK9Bxd1UcZRinvVRar9zOu5l6rnq4+4/RXnF9he98hecn2F7/AMj5V0Z+0JpKljc6a/DiIK8v94r1u9a+8+i07SV4u67zhlcsb5dcZjlPD3+cn2F7/wAg85PsR9/5HhdPv5k6N8eZnvk10xe/zk+wvf8AkHnJ9he/8jXuD48xZj4+A706Yth5zfYXv/IXnP8AKve+Rr818Qze/mO+R0xe95UfYXvfIXnR9he98jXOPfzBR7x3p0xbDzp+Re98gNfmgO9OkdVmcAzOBftfIOfIqIzeBLjwMl+/kLn4gY80M0tv61iv9awIcTHOSX/RdXP/AA5vtUtveYHTqdej/V8AMWJx9Gl/5Jwi2m1G6cmuCPBDLtKpGc4vMw8L6TES1JpbYw3vuNk6c91PnP4HlxGTs950oU29vrVFr39/El26Y3Ce45TLOW5VlKXo06VKShCF7yvr1yXU29XsZ1qx8H+KPNM8jyZFX+5p69vpT167mSOAS2Qpc5/AzjLG+TOZa8a09HlcN8eaJeKj2v2Mfkb7NLnMXkst1LnM05LeIj2lziS8Qt/jEnyae6nzmJ4ae6nzkQN4hb/2JeI4sl4We6nzmJ4apupc5AVp+LE6/F+BDoTX9P8AUS6Mv7f6ieF0yaZ7/FEyqS+mjHoZb4fqJdCW+HKRNxdLdd/TRMq/U9nWrpkeTS3w5S+IeTy/JykNxdVpMb0awU6kcQqcadaMs9Spq0XNbHKn6stes3GH9KLcX95Cyna9mn126ltMioT/ALfKQ/J56193rVn6M9a3bSW7ax/ViWLT1ekn1ozR19bFDCNbNEu6Ml/JkVOpq9Kmv9JPVzIXXwnN4sM3iz0Nd3IT+tQR5tHxYtHxZ6W/qwuXIDzaPiw0fFme31YPrYB59H+Z8gPRbu5AB01gzRgd3As1izXvAChOAZogMqMwWYAAS6ZMqf1cAJVjC6PfzGqffzADLWw6S48ydCuPNDACHQXHwF5OuPMAIDQLiJ0FxAAE6C4kvDriAEUeTriJ4db34AANp8mW9+AvJlx8AAhsnh+/mvgCo8HzQADatB380GhQAAtCtwnRW4ACk6K3E6Bbv2ABtRoVxE6a4+AwIFo1x8AACbV//9k="
+                            alt="Hatha Yoga">
+                        <div class="card-overlay">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-en="Hatha Yoga" data-mr="हठ योग">Hatha Yoga</h3>
+                        <p data-en="A gentle introduction to the most basic yoga postures. Perfect for beginners seeking balance and flexibility."
+                            data-mr="सर्वात मूलभूत योगासनांचा एक सौम्य परिचय. संतुलन आणि लवचिकता शोधणाऱ्या नवशिक्यांसाठी योग्य.">
+                            A gentle introduction to the most basic yoga postures. Perfect for beginners seeking balance
+                            and flexibility.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Hatha_yoga"><button class="learn-more-btn" data-en="Learn More" data-mr="अधिक जाणून घ्या">Learn
+                            More</button></a>
+                    </div>
+                </div>
+
+                <div class="yoga-card slide-in-up">
+                    <div class="card-image">
+                        <img src="data:image/jpeg;base64,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"
+                            alt="Vinyasa Yoga">
+                        <div class="card-overlay">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-en="Vinyasa Yoga" data-mr="विन्यास योग">Vinyasa Yoga</h3>
+                        <p data-en="A dynamic practice that links movement with breath. Flow through sequences that build strength and grace."
+                            data-mr="एक गतिशील सराव जो हालचाल आणि श्वासाला जोडतो. शक्ती आणि कृपा निर्माण करणाऱ्या क्रमांमधून प्रवाह.">
+                            A dynamic practice that links movement with breath. Flow through sequences that build
+                            strength and grace.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Viny%C4%81sa"><button class="learn-more-btn" data-en="Learn More" data-mr="अधिक जाणून घ्या">Learn
+                            More</button></a>
+                    </div>
+                </div>
+
+                <div class="yoga-card slide-in-right">
+                    <div class="card-image">
+                        <img src="data:image/jpeg;base64,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"
+                            alt="Ashtanga Yoga">
+                        <div class="card-overlay">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-en="Ashtanga Yoga" data-mr="अष्टांग योग">Ashtanga Yoga</h3>
+                        <p data-en="A rigorous style of yoga that follows a specific sequence of postures. Builds incredible strength and stamina."
+                            data-mr="योगाची एक कठोर शैली जी आसनांच्या विशिष्ट क्रमाचे अनुसरण करते. अविश्वसनीय शक्ती आणि सहनशक्ती निर्माण करते.">
+                            A rigorous style of yoga that follows a specific sequence of postures. Builds incredible
+                            strength and stamina.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Ashtanga_(vinyasa)_yoga"><button class="learn-more-btn" data-en="Learn More" data-mr="अधिक जाणून घ्या">Learn
+                            More</button></a>
+                    </div>
+                </div>
+
+                <div class="yoga-card slide-in-left">
+                    <div class="card-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt87rOgASkXJZ6ngYww8ylqqtjQrTFKiDWjw&s"
+                            alt="Kundalini Yoga">
+                        <div class="card-overlay">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-en="Kundalini Yoga" data-mr="कुंडलिनी योग">Kundalini Yoga</h3>
+                        <p data-en="A spiritual practice that combines physical postures, breathing techniques, meditation, and chanting."
+                            data-mr="एक आध्यात्मिक सराव जो शारीरिक आसन, श्वासोच्छवासाची तंत्रे, ध्यान आणि मंत्रजप एकत्र करतो.">
+                            A spiritual practice that combines physical postures, breathing techniques, meditation, and
+                            chanting.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Kundalini_yoga"><button class="learn-more-btn" data-en="Learn More" data-mr="अधिक जाणून घ्या">Learn
+                            More</button></a>
+                    </div>
+                </div>
+
+                <div class="yoga-card slide-in-up">
+                    <div class="card-image">
+                        <img src="data:image/jpeg;base64,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"
+                            alt="Yin Yoga">
+                        <div class="card-overlay">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-en="Yin Yoga" data-mr="यिन योग">Yin Yoga</h3>
+                        <p data-en="A quiet, meditative practice with poses held for longer periods. Perfect for deep stretching and relaxation."
+                            data-mr="एक शांत, ध्यानात्मक सराव ज्यामध्ये आसने जास्त काळ धरली जातात. खोल स्ट्रेचिंग आणि विश्रांतीसाठी योग्य.">
+                            A quiet, meditative practice with poses held for longer periods. Perfect for deep stretching
+                            and relaxation.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Yin_Yoga"><button class="learn-more-btn" data-en="Learn More" data-mr="अधिक जाणून घ्या">Learn
+                            More</button></a>
+                    </div>
+                </div>
+
+                <div class="yoga-card slide-in-right">
+                    <div class="card-image">
+                        <img src="data:image/jpeg;base64,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"
+                            alt="Restorative Yoga">
+                        <div class="card-overlay">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-en="Restorative Yoga" data-mr="पुनर्स्थापनकारी योग">Restorative Yoga</h3>
+                        <p data-en="A deeply relaxing practice using props to support the body in gentle poses for ultimate stress relief."
+                            data-mr="परम तणाव मुक्तीसाठी सौम्य आसनांमध्ये शरीराला आधार देण्यासाठी साधनांचा वापर करून खोल आरामदायक सराव.">
+                            A deeply relaxing practice using props to support the body in gentle poses for ultimate
+                            stress relief.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Restorative_Yoga"><button class="learn-more-btn" data-en="Learn More" data-mr="अधिक जाणून घ्या">Learn
+                            More</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Benefits of Yoga" data-mr="योगाचे फायदे">Benefits of Yoga</h2>
+                <p class="section-subtitle" data-en="Discover how yoga transforms your mind, body, and spirit"
+                    data-mr="योग आपले मन, शरीर आणि आत्मा कसा बदलतो ते शोधा">
+                    Discover how yoga transforms your mind, body, and spirit
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 data-en="Mental Clarity" data-mr="मानसिक स्पष्टता">Mental Clarity</h3>
+                    <p data-en="Enhance focus, reduce stress, and achieve mental balance through mindful practice."
+                        data-mr="जाणीवपूर्ण सरावाद्वारे लक्ष वाढवा, तणाव कमी करा आणि मानसिक संतुलन मिळवा.">
+                        Enhance focus, reduce stress, and achieve mental balance through mindful practice.
+                    </p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3 data-en="Physical Strength" data-mr="शारीरिक शक्ती">Physical Strength</h3>
+                    <p data-en="Build core strength, improve flexibility, and enhance overall physical fitness."
+                        data-mr="मुख्य शक्ती निर्माण करा, लवचिकता सुधारा आणि एकूण शारीरिक तंदुरुस्ती वाढवा.">
+                        Build core strength, improve flexibility, and enhance overall physical fitness.
+                    </p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 data-en="Better Sleep" data-mr="चांगली झोप">Better Sleep</h3>
+                    <p data-en="Improve sleep quality and develop healthy sleep patterns through relaxation techniques."
+                        data-mr="विश्रांति तंत्रांद्वारे झोपेची गुणवत्ता सुधारा आणि निरोगी झोपेचे नमुने विकसित करा.">
+                        Improve sleep quality and develop healthy sleep patterns through relaxation techniques.
+                    </p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 data-en="Inner Peace" data-mr="अंतर्गत शांती">Inner Peace</h3>
+                    <p data-en="Find tranquility and develop emotional resilience through spiritual connection."
+                        data-mr="आध्यात्मिक जोडणीद्वारे शांतता शोधा आणि भावनिक लवचिकता विकसित करा.">
+                        Find tranquility and develop emotional resilience through spiritual connection.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Guided Yoga Sessions" data-mr="मार्गदर्शित योग सत्रे">Guided Yoga
+                    Sessions</h2>
+                <p class="section-subtitle" data-en="Follow along with expert instructors and deepen your practice"
+                    data-mr="तज्ञ प्रशिक्षकांसोबत अनुसरण करा आणि आपला सराव खोल करा">
+                    Follow along with expert instructors and deepen your practice
+                </p>
+            </div>
+            <div class="videos-grid">
+                <div class="video-card slide-in-left">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/v7AYKMP6rOE" title="Morning Yoga Flow"
+                            frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 data-en="Morning Yoga Flow" data-mr="सकाळी योग प्रवाह">Morning Yoga Flow</h3>
+                        <p data-en="Start your day with this energizing 20-minute morning yoga sequence."
+                            data-mr="या ऊर्जावान २० मिनिटांच्या सकाळच्या योग क्रमाने आपला दिवस सुरू करा.">
+                            Start your day with this energizing 20-minute morning yoga sequence.
+                        </p>
+                    </div>
+                </div>
+                <div class="video-card slide-in-up">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/4vTJHUDB5ak" title="Relaxing Evening Yoga"
+                            frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 data-en="Relaxing Evening Yoga" data-mr="आरामदायक संध्याकाळी योग">Relaxing Evening Yoga</h3>
+                        <p data-en="Unwind with this gentle evening practice designed to promote better sleep."
+                            data-mr="चांगल्या झोपेसाठी डिझाइन केलेल्या या सौम्य संध्याकाळच्या सरावाने आराम करा.">
+                            Unwind with this gentle evening practice designed to promote better sleep.
+                        </p>
+                    </div>
+                </div>
+                <div class="video-card slide-in-right">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/g_tea8ZNk5A" title="Yoga for Beginners"
+                            frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 data-en="Yoga for Beginners" data-mr="नवशिक्यांसाठी योग">Yoga for Beginners</h3>
+                        <p data-en="Perfect introduction to yoga with basic poses and breathing techniques."
+                            data-mr="मूलभूत आसने आणि श्वासोच्छवासाच्या तंत्रांसह योगाचा परिपूर्ण परिचय.">
+                            Perfect introduction to yoga with basic poses and breathing techniques.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Get in Touch" data-mr="संपर्कात रहा">Get in Touch</h2>
+                <p class="section-subtitle"
+                    data-en="Ready to begin your yoga journey? We're here to help you every step of the way."
+                    data-mr="आपला योग प्रवास सुरू करण्यास तयार आहात? आम्ही प्रत्येक पायरीत आपली मदत करण्यासाठी येथे आहोत.">
+                    Ready to begin your yoga journey? We're here to help you every step of the way.
+                </p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info slide-in-left">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4 data-en="Visit Us" data-mr="आम्हाला भेट द्या">Visit Us</h4>
+                            <p data-en="123 Serenity Lane, Peaceful Gardens, Wellness City"
+                                data-mr="१२३ शांती मार्ग, शांत उद्यान, वेलनेस सिटी">
+                                123 Serenity Lane, Peaceful Gardens, Wellness City
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4 data-en="Call Us" data-mr="आम्हाला कॉल करा">Call Us</h4>
+                            <p>+1 (555) 123-YOGA</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4 data-en="Email Us" data-mr="आम्हाला ईमेल करा">Email Us</h4>
+                            <p>hello@yogaawareness.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4 data-en="Hours" data-mr="वेळ">Hours</h4>
+                            <p data-en="Mon-Fri: 6AM-9PM | Sat-Sun: 7AM-7PM"
+                                data-mr="सोम-शुक्र: ६ सकाळी-९ संध्याकाळी | शनि-रवि: ७ सकाळी-७ संध्याकाळी">
+                                Mon-Fri: 6AM-9PM | Sat-Sun: 7AM-7PM
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form slide-in-right" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name" data-en="Your Name" data-mr="आपले नाव">Your Name</label>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email" data-en="Email Address" data-mr="ईमेल पत्ता">Email Address</label>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone">
+                        <label for="phone" data-en="Phone Number" data-mr="फोन नंबर">Phone Number</label>
+                        <span class="error-message" id="phone-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <select id="interest" name="interest" required>
+                            <option value="" data-en="Select your interest" data-mr="आपली आवड निवडा">Select your
+                                interest</option>
+                            <option value="beginner" data-en="Beginner Classes" data-mr="सुरुवातीचे वर्ग">Beginner
+                                Classes</option>
+                            <option value="intermediate" data-en="Intermediate Classes" data-mr="मध्यम वर्ग">
+                                Intermediate Classes</option>
+                            <option value="advanced" data-en="Advanced Classes" data-mr="प्रगत वर्ग">Advanced Classes
+                            </option>
+                            <option value="private" data-en="Private Sessions" data-mr="खाजगी सत्रे">Private Sessions
+                            </option>
+                            <option value="retreat" data-en="Yoga Retreats" data-mr="योग रिट्रीट">Yoga Retreats</option>
+                        </select>
+                        <label for="interest" data-en="Area of Interest" data-mr="आवडीचे क्षेत्र">Area of
+                            Interest</label>
+                        <span class="error-message" id="interest-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message" data-en="Your Message" data-mr="आपला संदेश">Your Message</label>
+                        <span class="error-message" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="submit-btn" data-en="Send Message" data-mr="संदेश पाठवा">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+                    <div class="success-message" id="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <span data-en="Thank you! Your message has been sent successfully."
+                            data-mr="धन्यवाद! आपला संदेश यशस्वीरित्या पाठविला गेला आहे.">
+                            Thank you! Your message has been sent successfully.
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🧘‍♀️ Yoga Awareness</h3>
+                    <p data-en="Transforming lives through the ancient practice of yoga. Find your inner peace and strength with us."
+                        data-mr="योगाच्या प्राचीन सरावाद्वारे जीवन बदलणे. आमच्यासोबत आपली अंतर्गत शांती आणि शक्ती शोधा.">
+                        Transforming lives through the ancient practice of yoga. Find your inner peace and strength with
+                        us.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-mr="द्रुत लिंक">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" data-en="Home" data-mr="मुख्यपृष्ठ">Home</a></li>
+                        <li><a href="#types" data-en="Types of Yoga" data-mr="योगाचे प्रकार">Types of Yoga</a></li>
+                        <li><a href="#benefits" data-en="Benefits" data-mr="फायदे">Benefits</a></li>
+                        <li><a href="#videos" data-en="Videos" data-mr="व्हिडिओ">Videos</a></li>
+                        <li><a href="#contact" data-en="Contact" data-mr="संपर्क">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Classes" data-mr="वर्ग">Classes</h4>
+                    <ul>
+                        <li><a href="#" data-en="Beginner Yoga" data-mr="सुरुवातीचा योग">Beginner Yoga</a></li>
+                        <li><a href="#" data-en="Advanced Yoga" data-mr="प्रगत योग">Advanced Yoga</a></li>
+                        <li><a href="#" data-en="Meditation" data-mr="ध्यान">Meditation</a></li>
+                        <li><a href="#" data-en="Prenatal Yoga" data-mr="गर्भावस्थेतील योग">Prenatal Yoga</a></li>
+                        <li><a href="#" data-en="Kids Yoga" data-mr="मुलांसाठी योग">Kids Yoga</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Newsletter" data-mr="वृत्तपत्र">Newsletter</h4>
+                    <p data-en="Subscribe to get the latest yoga tips and updates."
+                        data-mr="नवीनतम योग टिप्स आणि अपडेट्स मिळविण्यासाठी सबस्क्राइब करा.">
+                        Subscribe to get the latest yoga tips and updates.
+                    </p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" data-en-placeholder="Enter your email"
+                            data-mr-placeholder="आपला ईमेल टाका">
+                        <button type="submit" data-en="Subscribe" data-mr="सबस्क्राइब करा">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="&copy; 2025 Yoga Awareness. All rights reserved. | Designed with ♥ for your wellness journey."
+                    data-mr="&copy; २०२५ योग जागरूकता. सर्व हक्क राखीव. | आपल्या कल्याणकारी प्रवासासाठी ♥ सह डिझाइन केले.">
+                    &copy; 2025 Yoga Awareness. All rights reserved. | Designed with ♥ for your wellness journey.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
