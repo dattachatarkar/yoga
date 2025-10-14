@@ -288,11 +288,15 @@ function clearFieldError(field) {
     field.style.borderColor = '';
 }
 
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
     e.preventDefault();
+    
+    // ⚠️ IMPORTANT: Replace this placeholder with your actual Formspree endpoint URL
+    const formspreeEndpoint = 'https://formspree.io/f/mzzjkwge'; 
     
     const submitBtn = contactForm.querySelector('.submit-btn');
     const successMessage = document.getElementById('success-message');
+    const formData = new FormData(contactForm);
     
     // Validate all fields
     const inputs = contactForm.querySelectorAll('input[required], select[required], textarea[required]');
@@ -308,33 +312,77 @@ function handleFormSubmit(e) {
         return;
     }
     
-    // Show loading state
+    // --- Start Submission Process ---
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
     
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-        // Hide loading state
-        submitBtn.classList.remove('loading');
-        submitBtn.disabled = false;
+    try {
+        const response = await fetch(formspreeEndpoint, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                // Formspree often handles FormData without a specific 'Content-Type', 
+                // but if you were sending JSON, you'd use 'application/json'.
+                'Accept': 'application/json' 
+            }
+        });
         
-        // Show success message
-        successMessage.classList.add('show');
+        if (response.ok) {
+            // Successful submission
+            successMessage.innerHTML = currentLanguage === 'en' 
+                ? '✅ Thank you! Your message has been sent successfully.' 
+                : '✅ धन्यवाद! तुमचा संदेश यशस्वीरित्या पाठवला गेला आहे.';
+            successMessage.classList.add('show');
+            
+            contactForm.reset();
+            
+            // Auto-hide the success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+            
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+        } else {
+            // Unsuccessful submission (e.g., Formspree validation error)
+            const errorData = await response.json();
+            const errorMessage = errorData.error 
+                ? errorData.error 
+                : (currentLanguage === 'en' ? 'Oops! An error occurred. Please try again.' : 'अरेरे! काहीतरी चूक झाली. कृपया पुन्हा प्रयत्न करा.');
+            
+            successMessage.innerHTML = `❌ ${errorMessage}`;
+            successMessage.classList.add('show', 'error');
+            
+            // Auto-hide the error message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show', 'error');
+            }, 5000);
+            
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    } catch (error) {
+        // Network error (e.g., client offline)
+        console.error('Form Submission Error:', error);
         
-        // Reset form
-        contactForm.reset();
+        successMessage.innerHTML = currentLanguage === 'en' 
+            ? '❌ Network error. Please check your connection and try again.' 
+            : '❌ नेटवर्क त्रुटी. कृपया आपले कनेक्शन तपासा आणि पुन्हा प्रयत्न करा.';
+        successMessage.classList.add('show', 'error');
         
-        // Hide success message after 5 seconds
+        // Auto-hide the error message after 5 seconds
         setTimeout(() => {
-            successMessage.classList.remove('show');
+            successMessage.classList.remove('show', 'error');
         }, 5000);
         
-        // Scroll to success message
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
-    }, 2000);
-}
 
+    } finally {
+        // --- End Submission Process ---
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+        successMessage.classList.remove('error'); // Ensure error state is cleared on success/next attempt
+    }
+}
 // Back to Top Button
 function setupBackToTop() {
     // Show/hide back to top button based on scroll position
